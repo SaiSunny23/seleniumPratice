@@ -11,7 +11,7 @@ import resourcesfileget.GetResource;
 
 public class OpenWindow {
 	
-	String broswer = "";
+	String broswer = "firefox";
 	WebDriver driver;
 
 	public WebDriver Open(WebDriver driver) throws IOException {
@@ -20,7 +20,7 @@ public class OpenWindow {
 		try {
 			driver = selectbroswer(prop.getProperty("window"));
 			driver.manage().window().maximize();
-			driver.get("url");
+			driver.get(prop.getProperty("url"));
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 			return driver;
 		} catch (Exception e) {
@@ -38,8 +38,9 @@ public class OpenWindow {
 		chromeOptions.addArguments("--disable-extensions");
 		chromeOptions.addArguments("--remote-allow-origins=*");
 		chromeOptions.addArguments("--force-device-scale-factor=0.8");
-		WebDriverManager.chromiumdriver().setup();
-		WebDriver b1 = new ChromeDriver(chromeOptions);
+		//WebDriverManager.chromiumdriver().setup();
+		System.setProperty("Webdriver.chrome.driver","D:\\seleniumPratice\\QAFoxWebsite\\src\\main\\java\\webdrivers\\Drivers\\chromedriver.exe");
+		 ChromeDriver chrome = new ChromeDriver(chromeOptions);
 		break;
 		case "edge":
 			WebDriverManager.edgedriver().setup();
