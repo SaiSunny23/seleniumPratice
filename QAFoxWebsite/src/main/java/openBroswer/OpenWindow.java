@@ -10,11 +10,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import resourcesfileget.GetResource;
 
 public class OpenWindow {
-	
+
 	String broswer = "firefox";
 	WebDriver driver;
 
-	public WebDriver Open(WebDriver driver) throws IOException {
+	public WebDriver Open() throws IOException {
 
 		GetResource prop = new GetResource();
 		try {
@@ -33,28 +33,29 @@ public class OpenWindow {
 	private WebDriver selectbroswer(String broswer) {
 		switch (broswer) {
 		case "chrome":
-		ChromeOptions chromeOptions= new ChromeOptions();
-		chromeOptions.addArguments("--incognito");
-		chromeOptions.addArguments("--disable-extensions");
-		chromeOptions.addArguments("--remote-allow-origins=*");
-		chromeOptions.addArguments("--force-device-scale-factor=0.8");
-		WebDriverManager.chromiumdriver().setup();
-	//	System.setProperty("Webdriver.chrome.driver","D:\\seleniumPratice\\QAFoxWebsite\\src\\main\\java\\webdrivers\\Drivers\\chromedriver.exe");
-		 driver = new ChromeDriver(chromeOptions);
-		break;
+			ChromeOptions chromeOptions = new ChromeOptions();
+			chromeOptions.addArguments("--incognito");
+			chromeOptions.addArguments("--disable-extensions");
+			chromeOptions.addArguments("--remote-allow-origins=*");
+			chromeOptions.addArguments("--force-device-scale-factor=0.8");
+			// WebDriverManager.chromiumdriver().setup();
+			System.setProperty("Webdriver.chrome.driver",
+					"D:\\seleniumPratice\\QAFoxWebsite\\src\\main\\java\\webdrivers\\Drivers\\chromedriver.exe");
+			driver = new ChromeDriver(chromeOptions);
+			break;
 		case "edge":
 			WebDriverManager.edgedriver().setup();
 			break;
-		case"firefox":
+		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
-			
-			default:
-				System.out.println("Invalid Browser. Please try again !");
-				break;
-		
-		
+
+		default:
+			System.out.println("Invalid Browser. Please try again !");
+			driver=null;
+			break;
+
 		}
-		
+
 		return driver;
 	}
 
