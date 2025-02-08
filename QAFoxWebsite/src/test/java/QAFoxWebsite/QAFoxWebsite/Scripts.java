@@ -22,6 +22,7 @@ public class Scripts {
 		Lanch();
 		HomePageView page1 = new HomePageView();
 		page1.HomepageActions(driver);
+		
 		Thread.sleep(10000);
 
 	}
