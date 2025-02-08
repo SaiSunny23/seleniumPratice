@@ -31,6 +31,7 @@ public class Scripts {
 		Registercreate register = new Registercreate();
 		register.usercreation(driver);
 		register.confrimuser(driver);
+		
 		Thread.sleep(5000);
 	}
 	
