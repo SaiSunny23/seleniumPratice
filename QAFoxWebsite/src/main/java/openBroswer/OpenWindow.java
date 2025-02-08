@@ -38,8 +38,8 @@ public class OpenWindow {
 		chromeOptions.addArguments("--disable-extensions");
 		chromeOptions.addArguments("--remote-allow-origins=*");
 		chromeOptions.addArguments("--force-device-scale-factor=0.8");
-		//WebDriverManager.chromiumdriver().setup();
-		System.setProperty("Webdriver.chrome.driver","D:\\seleniumPratice\\QAFoxWebsite\\src\\main\\java\\webdrivers\\Drivers\\chromedriver.exe");
+		WebDriverManager.chromiumdriver().setup();
+	//	System.setProperty("Webdriver.chrome.driver","D:\\seleniumPratice\\QAFoxWebsite\\src\\main\\java\\webdrivers\\Drivers\\chromedriver.exe");
 		 driver = new ChromeDriver(chromeOptions);
 		break;
 		case "edge":

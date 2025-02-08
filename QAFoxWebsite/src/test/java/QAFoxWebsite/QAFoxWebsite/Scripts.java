@@ -3,6 +3,7 @@ package QAFoxWebsite.QAFoxWebsite;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import openBroswer.OpenWindow;
@@ -17,12 +18,19 @@ public class Scripts {
 		open.Open(driver);
 	}
 @Test
-	public void Homepagesc(WebDriver driver) throws IOException, InterruptedException {
+	public void Homepagesc() throws IOException, InterruptedException {
 		Lanch();
 		HomePageView page1 = new HomePageView();
 		page1.HomepageActions(driver);
 		Thread.sleep(10000);
 
 	}
+@AfterMethod()
+public void exitchromeDriver() {
+	driver.close();
+}
+
+
+
 
 }
