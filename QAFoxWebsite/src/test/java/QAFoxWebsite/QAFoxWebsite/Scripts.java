@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import openBroswer.OpenWindow;
 import sourcecreation.HomePageView;
+import sourcecreation.Registercreate;
 
 public class Scripts {
 	WebDriver driver;
@@ -16,22 +17,28 @@ public class Scripts {
 	@BeforeMethod
 	public void Lanch() throws IOException, InterruptedException {
 		OpenWindow open = new OpenWindow();
-		driver=open.Open();
+		driver = open.Open();
 	}
-@Test
+
+	@Test
 	public void Homepagesc() throws IOException, InterruptedException {
 		HomePageView page1 = new HomePageView();
 		page1.HomepageActions(driver);
-		
-		//Thread.sleep(10000);
-
 	}
-@AfterMethod
-public void exitchromeDriver() {
-	CloseWindowall close = new CloseWindowall();
-	close.closewindowallb(driver);
-}
+	@Test
+	public void registerusertodimain() throws IOException, InterruptedException {
+		Homepagesc();
+		Registercreate register = new Registercreate();
+		register.usercreation(driver);
+		register.confrimuser(driver);
+		Thread.sleep(5000);
+	}
+	
 
-
+	@AfterMethod
+	public void exitchromeDriver() {
+		CloseWindowall close = new CloseWindowall();
+		close.closewindowallb(driver);
+	}
 
 }

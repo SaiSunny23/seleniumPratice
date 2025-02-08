@@ -38,5 +38,25 @@ public class Methodsuse {
 		}
 		return status;
 	}
+	public boolean gettext(WebDriver driver, By value) {
+		try {
+			driver.findElement(value).getText();
+			status = true;
+		} catch (Exception e) {
+
+			status = false;
+		}
+		return status;
+	}
+	public boolean enable(WebDriver driver, By value) {
+		try {
+			driver.findElement(value).isEnabled();
+			status = true;
+		} catch (Exception e) {
+
+			status = false;
+		}
+		return status;
+	}
 	
 }
