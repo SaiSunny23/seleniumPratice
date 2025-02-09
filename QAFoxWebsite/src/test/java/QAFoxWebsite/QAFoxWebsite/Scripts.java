@@ -13,6 +13,7 @@ import sourcecreation.Registercreate;
 
 public class Scripts {
 	WebDriver driver;
+	HomePageView page1;
 
 	@BeforeMethod
 	public void Lanch() throws IOException, InterruptedException {
@@ -22,19 +23,25 @@ public class Scripts {
 
 	@Test
 	public void Homepagesc() throws IOException, InterruptedException {
-		HomePageView page1 = new HomePageView();
+		page1 = new HomePageView();
 		page1.HomepageActions(driver);
 	}
+
 	@Test
-	public void registerusertodimain() throws IOException, InterruptedException {
+	public  void registerusertodimain() throws IOException, InterruptedException {
 		Homepagesc();
 		Registercreate register = new Registercreate();
 		register.usercreation(driver);
+		boolean warn =register.warnigmessage(driver);
+		if (warn==true) {
+			page1.backtohome(driver);
+			Thread.sleep(5000);
+		}else if(warn!=true) {
 		register.confrimuser(driver);
-		
+		Thread.sleep(5000);
+		}
 		Thread.sleep(5000);
 	}
-	
 
 	@AfterMethod
 	public void exitchromeDriver() {

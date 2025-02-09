@@ -13,5 +13,6 @@ public class register {
 	public static By ConfirmPassword = By.xpath("//input[@name='confirm']");
 	public static By CheckBox = By.xpath("//input[@name='agree']");
 	public static By coutiune = By.xpath("//input[@value='Continue']");
+	public static By warningmessage= By.xpath("//div[@class='alert alert-danger alert-dismissible']");
 
 }

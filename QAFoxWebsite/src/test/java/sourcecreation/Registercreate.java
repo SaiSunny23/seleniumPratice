@@ -11,10 +11,11 @@ import resourcesfileget.GetResource;
 
 public class Registercreate {
 	GetResource prop;
+	Methodsuse use;
 
 	public void usercreation(WebDriver driver) throws IOException {
 		prop = new GetResource();
-		Methodsuse use = new Methodsuse();
+		use = new Methodsuse();
 		use.display(driver, register.RegisterName);
 		use.enterValue(driver, register.FirstName, prop.getProperty("frist"));
 		use.enterValue(driver, register.LastName, prop.getProperty("last"));
@@ -25,12 +26,17 @@ public class Registercreate {
 		use.click(driver, register.CheckBox);
 		use.click(driver, register.coutiune);
 	}
-	
+
 	public void confrimuser(WebDriver driver) {
-		Methodsuse use = new Methodsuse();
+		use = new Methodsuse();
 		use.display(driver, confirmmregisterprocess.confirmuserregister);
 		use.click(driver, confirmmregisterprocess.coutiube);
 		use.enable(driver, confirmmregisterprocess.myaccount);
-		
+
+	}
+
+	public boolean warnigmessage(WebDriver driver) {
+		return use.display(driver, register.warningmessage);
+
 	}
 }
