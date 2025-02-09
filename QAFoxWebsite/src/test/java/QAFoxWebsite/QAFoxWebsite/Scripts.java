@@ -50,6 +50,10 @@ public class Scripts {
 		login.LoginPage(driver);
 		
 	}
+	
+	public void selectproduct() {
+		
+	}
 
 
 
