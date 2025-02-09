@@ -5,7 +5,9 @@
     <classes>
       <class name="QAFoxWebsite.QAFoxWebsite.Scripts">
         <methods>
-          <include name="Homepagesc"/>
+          <include name="loginapll"/>
+          <include name="exitchromeDriver"/>
+          <include name="Lanch"/>
         </methods>
       </class> <!-- QAFoxWebsite.QAFoxWebsite.Scripts -->
     </classes>
