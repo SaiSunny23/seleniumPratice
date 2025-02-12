@@ -48,7 +48,7 @@ public class Scripts {
 		page1.HomepageActionsLogin(driver);
 		login login = new login();
 		login.LoginPage(driver);
-		
+		Thread.sleep(15000);		
 	}
 	
 	public void selectproduct() {
