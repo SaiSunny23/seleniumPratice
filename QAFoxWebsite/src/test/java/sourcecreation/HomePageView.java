@@ -14,7 +14,7 @@ public class HomePageView {
 	public void HomepageActions(WebDriver driver) {
 		Methodsuse method = new Methodsuse();
 		method.display(driver, homePage.home);
-		method.click(driver, homePage.myAccount);
+		//method.click(driver, homePage.myAccount);
 		method.click(driver, homePage.Register);
 	}
 
@@ -26,7 +26,7 @@ public class HomePageView {
 	public void HomepageActionsLogin(WebDriver driver) {
 		 method = new Methodsuse();
 		method.display(driver, homePage.home);
-		method.click(driver, homePage.myAccount);
+	//	method.click(driver, homePage.myAccount);
 		method.click(driver, homePage.login);
 	}
 	

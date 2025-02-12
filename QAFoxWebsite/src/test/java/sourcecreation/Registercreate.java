@@ -20,10 +20,10 @@ public class Registercreate {
 		use.enterValue(driver, register.FirstName, prop.getProperty("frist"));
 		use.enterValue(driver, register.LastName, prop.getProperty("last"));
 		use.enterValue(driver, register.Email, prop.getProperty("email"));
-		use.enterValue(driver, register.TelePhone, prop.getProperty("telephone"));
+	//	use.enterValue(driver, register.TelePhone, prop.getProperty("telephone"));
 		use.enterValue(driver, register.Password, prop.getProperty("password"));
 		use.enterValue(driver, register.ConfirmPassword, prop.getProperty("password"));
-		use.click(driver, register.CheckBox);
+	//	use.click(driver, register.CheckBox);
 		use.click(driver, register.coutiune);
 	}
 
@@ -35,8 +35,8 @@ public class Registercreate {
 
 	}
 
-	public boolean warnigmessage(WebDriver driver) {
-		return use.display(driver, register.warningmessage);
+/*	public boolean warnigmessage(WebDriver driver) {
+	//	return use.display(driver, register.warningmessage);
 
-	}
+	}*/
 }

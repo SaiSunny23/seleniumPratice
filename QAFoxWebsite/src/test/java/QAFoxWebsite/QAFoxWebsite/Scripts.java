@@ -32,14 +32,14 @@ public class Scripts {
 		Homepagesc();
 		Registercreate register = new Registercreate();
 		register.usercreation(driver);
-		boolean warn = register.warnigmessage(driver);
+	/*	boolean warn = register.warnigmessage(driver);
 		if (warn == true) {
 			page1.backtohome(driver);
 			Thread.sleep(5000);
 		} else if (warn != true) {
 			register.confrimuser(driver);
 			Thread.sleep(5000);
-		}
+		}*/
 		Thread.sleep(5000);
 	}
 
